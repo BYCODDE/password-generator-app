@@ -130,7 +130,12 @@ input[type="range"]::-webkit-slider-thumb {
 .strength_div {
   margin-top: 31px;
 }
-
+#strength_svg{
+  position: absolute;
+    margin-left: 44vh;
+    margin-top: -50px;
+    margin-left: 41vh;
+}
 #Strength {
   width: 476px;
   height: 72px;
