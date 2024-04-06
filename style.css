@@ -52,15 +52,12 @@ h1 {
   width: 540px;
   height: 528px;
   background: var(--Dark-Grey, #24232c);
+  padding: 34px 32px 35px 32px;
 }
 .range_div {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  /* margin-left: 32px;
-  margin-right: 32px;
-  margin-bottom: 35px; */
-  padding: 34px 32px 35px 32px;
 }
 
 #Length {
@@ -77,4 +74,28 @@ h1 {
   font-style: normal;
   font-weight: 700;
   line-height: normal;
+}
+
+#myrange {
+  width: 476px;
+  height: 8px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: var(--Very-Dark-Grey, #18171f);
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  z-index: 1 !important;
+  -webkit-appearance: none;
+  background: url("/starter-code/assets/images/Oval.svg") no-repeat center
+    center;
+  cursor: pointer;
+  /* padding: 0 5px 0 5px; */
+  width: 28px;
+  height: 28px;
+}
+
+.myrange{
+  margin-top: 25px;
 }
