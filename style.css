@@ -96,6 +96,33 @@ input[type="range"]::-webkit-slider-thumb {
   height: 28px;
 }
 
-.myrange{
+.myrange {
   margin-top: 25px;
 }
+.checkbox_div {
+  display: flex;
+  justify-content: center;
+  margin-top: 42px;
+  flex-direction: column;
+  gap: 19px;
+}
+
+.container {
+  color: var(--Almost-White, #e6e5ea);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  gap: 12px;
+  display: flex;
+}
+
+/* .container input {
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--Almost-White, #e6e5ea);
+  background-color: black;
+} */
+/* input[type="checkbox"]:not(:checked) {
+  color: black;
+} */
