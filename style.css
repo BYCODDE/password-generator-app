@@ -33,6 +33,12 @@ h1 {
   height: 80px;
   background: var(--Dark-Grey, #24232c);
   padding: 19px 335px 19px 32px;
+  color: var(--Almost-White, #e6e5ea);
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  cursor: pointer;
 }
 .top_section input::placeholder {
   color: var(--Almost-White, #e6e5ea);
@@ -45,7 +51,6 @@ h1 {
 #svg_button {
   position: absolute;
   margin-left: 50vh;
-  margin-bottom: 10px;
 }
 
 .main_section {
@@ -115,6 +120,29 @@ input[type="range"]::-webkit-slider-thumb {
   line-height: normal;
   gap: 12px;
   display: flex;
+  cursor: pointer;
+}
+
+input[type="checkbox"] {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--Neon-Green, #a4ffaf);
+}
+
+/* input[type="checkbox"]::before {
+  content: "";
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid #ccc;
+  background-color: #fff; 
+  border-radius: 3px; 
+} */
+
+input[type="checkbox"]:checked {
+  background: var(--Neon-Green, #a4ffaf);
+
 }
 
 /* .container input {
@@ -130,11 +158,11 @@ input[type="range"]::-webkit-slider-thumb {
 .strength_div {
   margin-top: 31px;
 }
-#strength_svg{
+#strength_svg {
   position: absolute;
-    margin-left: 44vh;
-    margin-top: -50px;
-    margin-left: 41vh;
+  margin-left: 44vh;
+  margin-top: -50px;
+  margin-left: 41vh;
 }
 #Strength {
   width: 476px;
@@ -144,7 +172,7 @@ input[type="range"]::-webkit-slider-thumb {
 }
 
 #Strength input::placeholder {
-  color: #817D92;
+  color: #817d92;
   text-align: center;
   font-size: 18px;
   font-style: normal;
@@ -163,4 +191,18 @@ input[type="range"]::-webkit-slider-thumb {
   font-style: normal;
   font-weight: 700;
   line-height: normal;
+}
+
+#svg_button:hover path {
+  fill: rgba(255, 255, 255, 1);
+  cursor: pointer;
+}
+#main_button:hover {
+  background: none;
+  color: var(--Neon-Green, #a4ffaf);
+  border: 2px solid var(--Neon-Green, #a4ffaf);
+}
+
+#main_button:hover svg path {
+  fill: #a4ffaf;
 }
