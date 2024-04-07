@@ -99,7 +99,6 @@ span {
   -moz-appearance: none;
   appearance: none;
   background: var(--Very-Dark-Grey, #18171f);
-  --input-bg-color: var(--Neon-Green, #a4ffaf);
 }
 
 input[type="range"]::-webkit-slider-thumb {
