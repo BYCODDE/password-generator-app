@@ -237,10 +237,10 @@ input[type="text"]:focus {
   margin-top: -50px;
   margin-left: 16%;
   position: absolute;
+  display: none;
 }
-#TOO_WEAK{
+#TOO_WEAK {
   margin-left: 14%;
-
 }
 @media only screen and (max-width: 768px) {
   main {
@@ -314,11 +314,19 @@ input[type="text"]:focus {
     height: 56px;
     margin-top: 16px;
   }
+  .strength_div span {
+    font-size: 18px;
+    margin-top: -41px;
+    margin-left: 18%;
+  }
 }
 
 @media only screen and (width: 1440px) {
   #strength_svg {
     margin-left: 26%;
+  }
+  .strength_div span {
+    margin-left: 19%;
   }
 }
 @media only screen and (max-width: 500px) {
