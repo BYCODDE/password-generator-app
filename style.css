@@ -38,6 +38,7 @@ h1 {
   font-weight: 700;
   line-height: normal;
   cursor: pointer;
+  position: relative;
 }
 .top_section input::placeholder {
   color: var(--Almost-White, #e6e5ea);
@@ -50,6 +51,17 @@ h1 {
 #svg_button {
   position: absolute;
   margin-right: 32px;
+}
+
+span {
+  color: var(--Neon-Green, #a4ffaf);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  position: absolute;
+  margin-right: 69px;
+  display: none;
 }
 
 .main_section {
@@ -87,6 +99,7 @@ h1 {
   -moz-appearance: none;
   appearance: none;
   background: var(--Very-Dark-Grey, #18171f);
+  --input-bg-color: var(--Neon-Green, #a4ffaf);
 }
 
 input[type="range"]::-webkit-slider-thumb {
@@ -287,9 +300,14 @@ input[type="text"]:focus {
   }
 }
 
+@media only screen and (width: 1440px) {
+  #strength_svg {
+    margin-left: 26%;
+  }
+}
 @media only screen and (max-width: 500px) {
   #strength_svg {
-    margin-left: 49%
+    margin-left: 49%;
   }
 }
 @media only screen and (max-width: 430px) {
