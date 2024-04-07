@@ -276,7 +276,7 @@ input[type="text"]:focus {
     height: 56px;
   }
   #strength_svg {
-    margin-left: 33%;
+    margin-left: 30%;
     margin-top: -45px;
   }
   #main_button {
@@ -288,7 +288,7 @@ input[type="text"]:focus {
 
 @media only screen and (max-width: 500px) {
   #strength_svg {
-    margin-left: 62%;
+    margin-left: 49%
   }
 }
 @media only screen and (max-width: 430px) {
