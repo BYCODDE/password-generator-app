@@ -140,10 +140,11 @@ input[type="checkbox"]:checked {
 }
 #strength_svg {
   position: absolute;
-  margin-left: 47vh;
+  margin-left: 22%;
   margin-top: -50px;
 }
 #Strength {
+  position: relative;
   width: 476px;
   height: 72px;
   background: #18171f;
