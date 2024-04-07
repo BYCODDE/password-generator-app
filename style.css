@@ -218,6 +218,7 @@ input[type="text"]:focus {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    width: 90%;
   }
 
   .top_section {
@@ -237,5 +238,73 @@ input[type="text"]:focus {
   }
   #svg_button {
     margin-right: 15.5px;
+  }
+
+  .main_section {
+    width: 343px;
+    height: 423px;
+    padding: 21px 16px 16px 16px;
+  }
+
+  #Length {
+    font-size: 16px;
+  }
+  #zero {
+    font-size: 24px;
+  }
+  .myrange {
+    margin-top: 19px;
+  }
+
+  #myrange {
+    width: 311px;
+  }
+  .checkbox_div {
+    gap: 16px;
+    margin-top: 29px;
+  }
+  .container {
+    font-size: 16px;
+    gap: 20px;
+  }
+  .strength_div {
+    margin-top: 29px;
+  }
+  #Strength {
+    padding: 17px 16px 18px 16px;
+    width: 311px;
+    height: 56px;
+  }
+  #strength_svg {
+    margin-left: 28vh;
+    margin-top: -45px;
+  }
+  #main_button {
+    width: 311px;
+    height: 56px;
+    margin-top: 16px;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  #strength_svg {
+    margin-left: 62%;
+  }
+}
+@media only screen and (max-width: 430px) {
+  #strength_svg {
+    margin-left: 53%;
+  }
+}
+
+@media only screen and (max-width: 390px) {
+  #strength_svg {
+    margin-left: 60%;
+  }
+}
+
+@media only screen and (max-width: 360px) {
+  #strength_svg {
+    margin-left: 63%;
   }
 }
