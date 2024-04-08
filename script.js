@@ -7,8 +7,8 @@ const checkbox = document.querySelectorAll('input[type="checkbox"]');
 const strength_svg = document.getElementById("first");
 const strength_svg2 = document.getElementById("second");
 const strength_svg3 = document.getElementById("third");
-const strength_svg4= document.getElementById("fourth");
-console.log(checkbox,strength_svg2,strength_svg3,strength_svg4);
+const strength_svg4 = document.getElementById("fourth");
+console.log(checkbox, strength_svg2, strength_svg3, strength_svg4);
 svg_button.addEventListener("click", function () {
   if (passwordInput.value.length > 0) {
     main_span.style.display = "block";
@@ -30,13 +30,48 @@ range.addEventListener("input", function () {
   range.style.background = gradient;
 });
 
+let checkedCount = 0;
 checkbox.forEach((checkbox) => {
-  console.log(checkbox);
   checkbox.addEventListener("change", function () {
-    if (checkbox.checked) {
-      strength_svg.style.fill = "red";
-    } else {
+    checkedCount++;
+    if (checkbox.checked && checkedCount === 4) {
+      strength_svg.style.fill = " var(--Neon-Green, #A4FFAF)";
+      strength_svg2.style.fill = " var(--Neon-Green, #A4FFAF)";
+      strength_svg3.style.fill = " var(--Neon-Green, #A4FFAF)";
+      strength_svg4.style.fill = " var(--Neon-Green, #A4FFAF)";
+    } else if (checkbox.checked && checkedCount === 3) {
+      strength_svg.style.fill = " var(--3---Yellow, #F8CD65)";
+      strength_svg2.style.fill = "var(--3---Yellow, #F8CD65)";
+      strength_svg3.style.fill = "var(--3---Yellow, #F8CD65)";
+    } else if (checkbox.checked && checkedCount === 2) {
+      strength_svg.style.fill = "var(--2---Orange, #FB7C58)";
+      strength_svg2.style.fill = "var(--2---Orange, #FB7C58)";
+    } else if (checkbox.checked && checkedCount === 1) {
+      strength_svg.style.fill = "var(--1---Red, #F64A4A)";
+    } 
+    else {
       strength_svg.style.fill = "none";
+      strength_svg.style.fill = " none";
+      strength_svg2.style.fill = " none";
+      strength_svg3.style.fill = " none";
+      strength_svg4.style.fill = " none";
     }
+
   });
 });
+
+    // else if(!checkbox.checked && checkedCount === 5){
+    //   strength_svg4.style.fill = " none";
+    //   checkedCount--
+    // console.log(checkedCount);
+
+    // }
+    // else if(!checkbox.checked && checkedCount === 4 && strength_svg4.style.fill === " none"){
+    //   strength_svg4.style.fill = " none";
+    //   strength_svg3.style.fill = " none";
+    //   checkedCount =checkedCount-2
+    // console.log(checkedCount);
+
+    // }
+    // console.log(checkedCount);
+
