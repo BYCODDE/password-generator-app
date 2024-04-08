@@ -8,7 +8,12 @@ const strength_svg = document.getElementById("first");
 const strength_svg2 = document.getElementById("second");
 const strength_svg3 = document.getElementById("third");
 const strength_svg4 = document.getElementById("fourth");
-console.log(checkbox, strength_svg2, strength_svg3, strength_svg4);
+const Too_Weak = document.getElementById("TOO_WEAK");
+const Weak = document.getElementById("WEAK");
+const Medium = document.getElementById("MEDIUM");
+const Strong = document.getElementById("STRONG");
+console.log(Too_Weak, Weak, Medium, Strong);
+
 svg_button.addEventListener("click", function () {
   if (passwordInput.value.length > 0) {
     main_span.style.display = "block";
@@ -39,39 +44,57 @@ checkbox.forEach((checkbox) => {
       strength_svg2.style.fill = " var(--Neon-Green, #A4FFAF)";
       strength_svg3.style.fill = " var(--Neon-Green, #A4FFAF)";
       strength_svg4.style.fill = " var(--Neon-Green, #A4FFAF)";
+      Strong.style.display = "block";
+      Medium.style.display = "none";
+      Weak.style.display = "none";
+      Too_Weak.style.display = "none";
     } else if (checkbox.checked && checkedCount === 3) {
       strength_svg.style.fill = " var(--3---Yellow, #F8CD65)";
       strength_svg2.style.fill = "var(--3---Yellow, #F8CD65)";
       strength_svg3.style.fill = "var(--3---Yellow, #F8CD65)";
+      Medium.style.display = "block";
+      Weak.style.display = "none";
+      Too_Weak.style.display = "none";
+      Strong.style.display = "none";
     } else if (checkbox.checked && checkedCount === 2) {
       strength_svg.style.fill = "var(--2---Orange, #FB7C58)";
       strength_svg2.style.fill = "var(--2---Orange, #FB7C58)";
+      Weak.style.display = "block";
+      Too_Weak.style.display = "none";
+      Medium.style.display = "none";
+      Strong.style.display = "none";
     } else if (checkbox.checked && checkedCount === 1) {
       strength_svg.style.fill = "var(--1---Red, #F64A4A)";
-    } 
-    else {
+      Too_Weak.style.display = "block";
+      Weak.style.display = "none";
+      Medium.style.display = "none";
+      Strong.style.display = "none";
+    } else {
       strength_svg.style.fill = "none";
       strength_svg.style.fill = " none";
       strength_svg2.style.fill = " none";
       strength_svg3.style.fill = " none";
       strength_svg4.style.fill = " none";
+      Too_Weak.style.display = "none";
+      Weak.style.display = "none";
+      Medium.style.display = "none";
+      Strong.style.display = "none";
     }
-
+    console.log(checkedCount);
   });
 });
 
-    // else if(!checkbox.checked && checkedCount === 5){
-    //   strength_svg4.style.fill = " none";
-    //   checkedCount--
-    // console.log(checkedCount);
+// else if(!checkbox.checked && checkedCount === 5){
+//   strength_svg4.style.fill = " none";
+//   checkedCount--
+// console.log(checkedCount);
 
-    // }
-    // else if(!checkbox.checked && checkedCount === 4 && strength_svg4.style.fill === " none"){
-    //   strength_svg4.style.fill = " none";
-    //   strength_svg3.style.fill = " none";
-    //   checkedCount =checkedCount-2
-    // console.log(checkedCount);
+// }
+// else if(!checkbox.checked && checkedCount === 4 && strength_svg4.style.fill === " none"){
+//   strength_svg4.style.fill = " none";
+//   strength_svg3.style.fill = " none";
+//   checkedCount =checkedCount-2
+// console.log(checkedCount);
 
-    // }
-    // console.log(checkedCount);
-
+// }
+// console.log(checkedCount);

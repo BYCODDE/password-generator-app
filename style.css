@@ -233,7 +233,6 @@ input[type="text"]:focus {
   font-style: normal;
   font-weight: 700;
   line-height: normal;
-  /* display: none; */
   margin-top: -50px;
   margin-left: 16%;
   position: absolute;
