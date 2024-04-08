@@ -15,8 +15,10 @@ const Strong = document.getElementById("STRONG");
 console.log(Too_Weak, Weak, Medium, Strong);
 
 svg_button.addEventListener("click", function () {
-  if (passwordInput.value.length > 0) {
+  if (passwordInput && passwordInput.value.length > 0) {
     main_span.style.display = "block";
+    passwordInput.select();
+    document.execCommand("copy");
   } else {
     main_span.style.display = "none";
   }
@@ -98,3 +100,19 @@ checkbox.forEach((checkbox) => {
 
 // }
 // console.log(checkedCount);
+
+function generatePassword() {
+  let length = 8,
+    charset =
+      "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+{}|:<>?`-=[]\\;',./'",
+    retVal = "";
+  n = charset.length;
+  for (let i = 0; i < length; i++) {
+    console.log(i);
+    console.log(charset.length);
+    retVal += charset.charAt(Math.floor(Math.random() * n));
+  }
+  return passwordInput.value = retVal;
+}
+
+console.log(generatePassword());
