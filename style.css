@@ -263,7 +263,8 @@ input[type="text"]:focus {
     width: 343px;
     height: 64px;
     font-size: 24px;
-    padding: 17px 183px 15px 16px;
+    /* padding: 17px 183px 15px 16px; */
+    padding: 19px;
   }
   #svg_button {
     margin-right: 15.5px;

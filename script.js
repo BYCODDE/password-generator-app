@@ -101,15 +101,15 @@ checkbox.forEach((checkbox) => {
 // console.log(checkedCount);
 
 main_button.addEventListener("click", function () {
-  let length = zero.textContent,
-    charset =
-      "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+{}|:<>?`-=[]\\;',./'",
-    finalPassword = "";
-  n = charset.length;
+  let length = zero.textContent;
+  let charset =
+    "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+{}|:<>?`-=[]\\;',./'";
+  let finalPassword ="";
   for (let i = 0; i < length; i++) {
     console.log(i);
     console.log(charset.length);
-    finalPassword += charset.charAt(Math.floor(Math.random() * n));
+    finalPassword += charset.charAt(Math.floor(Math.random() * charset.length));
+    console.log(finalPassword);
   }
   return (passwordInput.value = finalPassword);
 });
