@@ -12,8 +12,7 @@ const Too_Weak = document.getElementById("TOO_WEAK");
 const Weak = document.getElementById("WEAK");
 const Medium = document.getElementById("MEDIUM");
 const Strong = document.getElementById("STRONG");
-console.log(Too_Weak, Weak, Medium, Strong);
-
+const main_button = document.getElementById("main_button");
 svg_button.addEventListener("click", function () {
   if (passwordInput && passwordInput.value.length > 0) {
     main_span.style.display = "block";
@@ -101,18 +100,16 @@ checkbox.forEach((checkbox) => {
 // }
 // console.log(checkedCount);
 
-function generatePassword() {
-  let length = 8,
+main_button.addEventListener("click", function () {
+  let length = zero.textContent,
     charset =
       "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+{}|:<>?`-=[]\\;',./'",
-    retVal = "";
+    finalPassword = "";
   n = charset.length;
   for (let i = 0; i < length; i++) {
     console.log(i);
     console.log(charset.length);
-    retVal += charset.charAt(Math.floor(Math.random() * n));
+    finalPassword += charset.charAt(Math.floor(Math.random() * n));
   }
-  return passwordInput.value = retVal;
-}
-
-console.log(generatePassword());
+  return (passwordInput.value = finalPassword);
+});
