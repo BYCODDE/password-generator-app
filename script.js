@@ -36,80 +36,81 @@ range.addEventListener("input", function () {
   range.style.background = gradient;
 });
 
-let checkedCount = 0;
-checkbox.forEach((checkbox) => {
-  checkbox.addEventListener("change", function () {
-    checkedCount++;
-    if (checkbox.checked && checkedCount === 4) {
-      strength_svg.style.fill = " var(--Neon-Green, #A4FFAF)";
-      strength_svg2.style.fill = " var(--Neon-Green, #A4FFAF)";
-      strength_svg3.style.fill = " var(--Neon-Green, #A4FFAF)";
-      strength_svg4.style.fill = " var(--Neon-Green, #A4FFAF)";
-      Strong.style.display = "block";
-      Medium.style.display = "none";
-      Weak.style.display = "none";
-      Too_Weak.style.display = "none";
-    } else if (checkbox.checked && checkedCount === 3) {
-      strength_svg.style.fill = " var(--3---Yellow, #F8CD65)";
-      strength_svg2.style.fill = "var(--3---Yellow, #F8CD65)";
-      strength_svg3.style.fill = "var(--3---Yellow, #F8CD65)";
-      Medium.style.display = "block";
-      Weak.style.display = "none";
-      Too_Weak.style.display = "none";
-      Strong.style.display = "none";
-    } else if (checkbox.checked && checkedCount === 2) {
-      strength_svg.style.fill = "var(--2---Orange, #FB7C58)";
-      strength_svg2.style.fill = "var(--2---Orange, #FB7C58)";
-      Weak.style.display = "block";
-      Too_Weak.style.display = "none";
-      Medium.style.display = "none";
-      Strong.style.display = "none";
-    } else if (checkbox.checked && checkedCount === 1) {
-      strength_svg.style.fill = "var(--1---Red, #F64A4A)";
-      Too_Weak.style.display = "block";
-      Weak.style.display = "none";
-      Medium.style.display = "none";
-      Strong.style.display = "none";
-    } else {
-      strength_svg.style.fill = "none";
-      strength_svg.style.fill = " none";
-      strength_svg2.style.fill = " none";
-      strength_svg3.style.fill = " none";
-      strength_svg4.style.fill = " none";
-      Too_Weak.style.display = "none";
-      Weak.style.display = "none";
-      Medium.style.display = "none";
-      Strong.style.display = "none";
-    }
-    console.log(checkedCount);
-  });
-});
 
 // else if(!checkbox.checked && checkedCount === 5){
-//   strength_svg4.style.fill = " none";
-//   checkedCount--
-// console.log(checkedCount);
-
-// }
-// else if(!checkbox.checked && checkedCount === 4 && strength_svg4.style.fill === " none"){
-//   strength_svg4.style.fill = " none";
-//   strength_svg3.style.fill = " none";
-//   checkedCount =checkedCount-2
-// console.log(checkedCount);
-
-// }
-// console.log(checkedCount);
-
-main_button.addEventListener("click", function () {
-  let length = zero.textContent;
-  let charset =
-    "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+{}|:<>?`-=[]\\;',./'";
-  let finalPassword ="";
-  for (let i = 0; i < length; i++) {
-    console.log(i);
-    console.log(charset.length);
-    finalPassword += charset.charAt(Math.floor(Math.random() * charset.length));
-    console.log(finalPassword);
-  }
-  return (passwordInput.value = finalPassword);
-});
+  //   strength_svg4.style.fill = " none";
+  //   checkedCount--
+  // console.log(checkedCount);
+  
+  // }
+  // else if(!checkbox.checked && checkedCount === 4 && strength_svg4.style.fill === " none"){
+    //   strength_svg4.style.fill = " none";
+    //   strength_svg3.style.fill = " none";
+    //   checkedCount =checkedCount-2
+    // console.log(checkedCount);
+    
+    // }
+    // console.log(checkedCount);
+    
+    main_button.addEventListener("click", function () {
+  let checkedCount = 0;
+  checkbox.forEach((checkbox) => {
+    // checkbox.addEventListener("change", function () {
+      checkedCount++;
+      if (checkbox.checked && checkedCount === 4) {
+        strength_svg.style.fill = " var(--Neon-Green, #A4FFAF)";
+        strength_svg2.style.fill = " var(--Neon-Green, #A4FFAF)";
+        strength_svg3.style.fill = " var(--Neon-Green, #A4FFAF)";
+        strength_svg4.style.fill = " var(--Neon-Green, #A4FFAF)";
+        Strong.style.display = "block";
+        Medium.style.display = "none";
+        Weak.style.display = "none";
+        Too_Weak.style.display = "none";
+      } else if (checkbox.checked && checkedCount === 3) {
+        strength_svg.style.fill = " var(--3---Yellow, #F8CD65)";
+        strength_svg2.style.fill = "var(--3---Yellow, #F8CD65)";
+        strength_svg3.style.fill = "var(--3---Yellow, #F8CD65)";
+        Medium.style.display = "block";
+        Weak.style.display = "none";
+        Too_Weak.style.display = "none";
+        Strong.style.display = "none";
+      } else if (checkbox.checked && checkedCount === 2) {
+        strength_svg.style.fill = "var(--2---Orange, #FB7C58)";
+        strength_svg2.style.fill = "var(--2---Orange, #FB7C58)";
+        Weak.style.display = "block";
+        Too_Weak.style.display = "none";
+        Medium.style.display = "none";
+        Strong.style.display = "none";
+      } else if (checkbox.checked && checkedCount === 1) {
+        strength_svg.style.fill = "var(--1---Red, #F64A4A)";
+        Too_Weak.style.display = "block";
+        Weak.style.display = "none";
+        Medium.style.display = "none";
+        Strong.style.display = "none";
+      } 
+      // else {
+      //   strength_svg.style.fill = "none";
+      //   strength_svg.style.fill = " none";
+      //   strength_svg2.style.fill = " none";
+      //   strength_svg3.style.fill = " none";
+      //   strength_svg4.style.fill = " none";
+      //   Too_Weak.style.display = "none";
+      //   Weak.style.display = "none";
+      //   Medium.style.display = "none";
+      //   Strong.style.display = "none";
+      // }
+      console.log(checkedCount);
+      let length = zero.textContent;
+      let charset =
+        "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+{}|:<>?`-=[]\\;',./'";
+      let finalPassword ="";
+      for (let i = 0; i < length; i++) {
+        console.log(i);
+        console.log(charset.length);
+        finalPassword += charset.charAt(Math.floor(Math.random() * charset.length));
+        console.log(finalPassword);
+      }
+      return (passwordInput.value = finalPassword);
+    });
+  });
+// });
