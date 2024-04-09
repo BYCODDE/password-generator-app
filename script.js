@@ -209,6 +209,15 @@ main_button.addEventListener("click", function () {
     return (passwordInput.value = finalPassword);
   }
 
+  if (third_input.checked && fourth_input.checked && length !== "0") {
+    for (let i = 0; i < length; i++) {
+      finalPassword += tonumberSymbol.charAt(
+        Math.floor(Math.random() * tonumberSymbol.length)
+      );
+    }
+    return (passwordInput.value = finalPassword);
+  }
+
   if (first_input.checked && second_input.checked && length !== "0") {
     for (let i = 0; i < length; i++) {
       finalPassword += toupperTolower.charAt(

@@ -31,7 +31,6 @@ h1 {
   width: 540px;
   height: 80px;
   background: var(--Dark-Grey, #24232c);
-  /* padding: 19px 335px 19px 32px; */
   padding: 19px;
   color: var(--Almost-White, #e6e5ea);
   font-size: 32px;
@@ -49,6 +48,7 @@ h1 {
   font-weight: 700;
   line-height: normal;
 }
+
 #svg_button {
   position: absolute;
   margin-right: 32px;
@@ -105,7 +105,7 @@ h1 {
 input[type="range"]::-webkit-slider-thumb {
   z-index: 1 !important;
   -webkit-appearance: none;
-  background: url("/starter-code/assets/images/Oval.svg") no-repeat center
+  background: url("./starter-code/assets/images/Oval.svg") no-repeat center
     center;
   cursor: pointer;
   width: 28px;
@@ -152,19 +152,24 @@ input[type="checkbox"]:checked {
   margin-top: 31px;
 }
 #strength_svg {
-  position: absolute;
-  margin-left: 22%;
-  margin-top: -50px;
+  margin-right: 32px;
 }
 #Strength {
-  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   width: 476px;
   height: 72px;
   background: #18171f;
   padding: 25px 0px 23px 32px;
 }
-
-#Strength input::placeholder {
+.strength_span {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  align-items: center;
+}
+p {
   color: #817d92;
   text-align: center;
   font-size: 18px;
@@ -184,6 +189,7 @@ input[type="checkbox"]:checked {
   font-style: normal;
   font-weight: 700;
   line-height: normal;
+  cursor: pointer;
 }
 
 #svg_button:hover path {
@@ -211,7 +217,7 @@ input[type="checkbox"]:checked + .checkmark {
 }
 
 input[type="range"]::-webkit-slider-thumb:hover {
-  background: url("/starter-code/assets/images/Oval2.svg") no-repeat center;
+  background: url("./starter-code/assets/images/Oval2.svg") no-repeat center;
   border-radius: 50%;
   border: 2px solid #a4ffaf;
 }
@@ -234,14 +240,9 @@ input[type="text"]:focus {
   font-style: normal;
   font-weight: 700;
   line-height: normal;
-  margin-top: -50px;
-  margin-left: 16%;
-  position: absolute;
   display: none;
 }
-#TOO_WEAK {
-  margin-left: 14%;
-}
+
 @media only screen and (max-width: 768px) {
   main {
     display: flex;
@@ -264,7 +265,6 @@ input[type="text"]:focus {
     width: 343px;
     height: 64px;
     font-size: 24px;
-    /* padding: 17px 183px 15px 16px; */
     padding: 10px;
   }
   #svg_button {
@@ -307,8 +307,7 @@ input[type="text"]:focus {
     height: 56px;
   }
   #strength_svg {
-    margin-left: 30%;
-    margin-top: -45px;
+    margin-right: 4px;
   }
   #main_button {
     width: 311px;
@@ -317,38 +316,5 @@ input[type="text"]:focus {
   }
   .strength_div span {
     font-size: 18px;
-    margin-top: -41px;
-    margin-left: 18%;
-  }
-}
-
-@media only screen and (width: 1440px) {
-  #strength_svg {
-    margin-left: 26%;
-  }
-  .strength_div span {
-    margin-left: 19%;
-  }
-}
-@media only screen and (max-width: 500px) {
-  #strength_svg {
-    margin-left: 49%;
-  }
-}
-@media only screen and (max-width: 430px) {
-  #strength_svg {
-    margin-left: 53%;
-  }
-}
-
-@media only screen and (max-width: 390px) {
-  #strength_svg {
-    margin-left: 60%;
-  }
-}
-
-@media only screen and (max-width: 360px) {
-  #strength_svg {
-    margin-left: 63%;
   }
 }
