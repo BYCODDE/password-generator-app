@@ -17,7 +17,6 @@ const first_input = document.getElementById("first_input");
 const second_input = document.getElementById("second_input");
 const third_input = document.getElementById("third_input");
 const fourth_input = document.getElementById("fourth_input");
-console.log(first_input, second_input, third_input, fourth_input);
 
 svg_button.addEventListener("click", function () {
   if (passwordInput && passwordInput.value.length > 0) {
@@ -42,23 +41,9 @@ range.addEventListener("input", function () {
   range.style.background = gradient;
 });
 
-// else if(!checkbox.checked && checkedCount === 5){
-//   strength_svg4.style.fill = " none";
-//   checkedCount--
-// console.log(checkedCount);
-
-// }
-// else if(!checkbox.checked && checkedCount === 4 && strength_svg4.style.fill === " none"){
-//   strength_svg4.style.fill = " none";
-//   strength_svg3.style.fill = " none";
-//   checkedCount =checkedCount-2
-// console.log(checkedCount);
-
-// }
-// console.log(checkedCount);
-
 main_button.addEventListener("click", function () {
   let length = zero.textContent;
+
   if (
     first_input.checked &&
     second_input.checked &&
@@ -74,7 +59,6 @@ main_button.addEventListener("click", function () {
     Medium.style.display = "none";
     Weak.style.display = "none";
     Too_Weak.style.display = "none";
-    console.log("Checkbox is checked!");
   } else if (
     ((first_input.checked && second_input.checked && third_input.checked) ||
       (first_input.checked && second_input.checked && fourth_input.checked) ||
@@ -137,9 +121,51 @@ main_button.addEventListener("click", function () {
 
   let charset =
     "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+{}|:<>?`-=[]\\;',./'";
+  let charsetTouppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  let charsetTolowercase = "abcdefghijklmnopqrstuvwxyz";
+  let charsetNumbers = "0123456789";
+  let charsetSymbols = "!@#$%^&*()_+{}|:<>?`-=[]\\;',./'";
   let finalPassword = "";
+
+  if (first_input.checked && length !== "0") {
+    for (let i = 0; i < length; i++) {
+      finalPassword += charsetTouppercase.charAt(
+        Math.floor(Math.random() * charsetTouppercase.length)
+      );
+    }
+    return (passwordInput.value = finalPassword);
+  }
+
+  if (second_input.checked && length !== "0") {
+    for (let i = 0; i < length; i++) {
+      finalPassword += charsetTolowercase.charAt(
+        Math.floor(Math.random() * charsetTolowercase.length)
+      );
+    }
+    return (passwordInput.value = finalPassword);
+  }
+
+  if (third_input.checked && length !== "0") {
+    for (let i = 0; i < length; i++) {
+      finalPassword += charsetNumbers.charAt(
+        Math.floor(Math.random() * charsetNumbers.length)
+      );
+    }
+    return (passwordInput.value = finalPassword);
+  }
+
+  if (fourth_input.checked && length !== 0) {
+    for (let i = 0; i < length; i++) {
+      finalPassword += charsetSymbols.charAt(
+        Math.floor(Math.random() * charsetSymbols.length)
+      );
+    }
+    return (passwordInput.value = finalPassword);
+  }
+
   for (let i = 0; i < length; i++) {
     finalPassword += charset.charAt(Math.floor(Math.random() * charset.length));
   }
+
   return (passwordInput.value = finalPassword);
 });
