@@ -13,6 +13,12 @@ const Weak = document.getElementById("WEAK");
 const Medium = document.getElementById("MEDIUM");
 const Strong = document.getElementById("STRONG");
 const main_button = document.getElementById("main_button");
+const first_input = document.getElementById("first_input");
+const second_input = document.getElementById("second_input");
+const third_input = document.getElementById("third_input");
+const fourth_input = document.getElementById("fourth_input");
+console.log(first_input, second_input, third_input, fourth_input);
+
 svg_button.addEventListener("click", function () {
   if (passwordInput && passwordInput.value.length > 0) {
     main_span.style.display = "block";
@@ -54,61 +60,82 @@ range.addEventListener("input", function () {
 main_button.addEventListener("click", function () {
   let length = zero.textContent;
 
-  let checkedCount = 0;
-  checkbox.forEach((checkbox) => {
-    // checkbox.addEventListener("change", function () {
-    checkedCount++;
-    if (checkbox.checked && checkedCount === 4) {
-      strength_svg.style.fill = " var(--Neon-Green, #A4FFAF)";
-      strength_svg2.style.fill = " var(--Neon-Green, #A4FFAF)";
-      strength_svg3.style.fill = " var(--Neon-Green, #A4FFAF)";
-      strength_svg4.style.fill = " var(--Neon-Green, #A4FFAF)";
-      Strong.style.display = "block";
-      Medium.style.display = "none";
-      Weak.style.display = "none";
-      Too_Weak.style.display = "none";
-    } else if (checkbox.checked && checkedCount === 3) {
-      strength_svg.style.fill = " var(--3---Yellow, #F8CD65)";
-      strength_svg2.style.fill = "var(--3---Yellow, #F8CD65)";
-      strength_svg3.style.fill = "var(--3---Yellow, #F8CD65)";
-      Medium.style.display = "block";
-      Weak.style.display = "none";
-      Too_Weak.style.display = "none";
-      Strong.style.display = "none";
-    } else if (checkbox.checked && checkedCount === 2) {
-      strength_svg.style.fill = "var(--2---Orange, #FB7C58)";
-      strength_svg2.style.fill = "var(--2---Orange, #FB7C58)";
-      Weak.style.display = "block";
-      Too_Weak.style.display = "none";
-      Medium.style.display = "none";
-      Strong.style.display = "none";
-    } else if (checkbox.checked && checkedCount === 1) {
-      strength_svg.style.fill = "var(--1---Red, #F64A4A)";
-      Too_Weak.style.display = "block";
-      Weak.style.display = "none";
-      Medium.style.display = "none";
-      Strong.style.display = "none";
-    } else if (zero.textContent === "0") {
-      strength_svg.style.fill = "none";
-      strength_svg.style.fill = " none";
-      strength_svg2.style.fill = " none";
-      strength_svg3.style.fill = " none";
-      strength_svg4.style.fill = " none";
-      Too_Weak.style.display = "none";
-      Weak.style.display = "none";
-      Medium.style.display = "none";
-      Strong.style.display = "none";
-      checkedCount = 0;
-      console.log(typeof zero.textContent);
-    }
-  });
-  console.log(checkedCount);
+  // let checkedCount = 0;
+  // checkbox.forEach((checkbox) => {
+  // checkedCount++;
+  if ( ((first_input.checked && second_input.checked && third_input.checked && fourth_input.checked)) &&
+length !== "0") {
+    strength_svg.style.fill = " var(--Neon-Green, #A4FFAF)";
+    strength_svg2.style.fill = " var(--Neon-Green, #A4FFAF)";
+    strength_svg3.style.fill = " var(--Neon-Green, #A4FFAF)";
+    strength_svg4.style.fill = " var(--Neon-Green, #A4FFAF)";
+    Strong.style.display = "block";
+    Medium.style.display = "none";
+    Weak.style.display = "none";
+    Too_Weak.style.display = "none";
+    console.log("Checkbox is checked!");
+  } 
+  else if (
+    ((first_input.checked && second_input.checked && third_input.checked) ||
+      (first_input.checked && second_input.checked && fourth_input.checked) ||
+      (first_input.checked && third_input.checked && fourth_input.checked) ||
+      (second_input.checked && third_input.checked && fourth_input.checked)) &&
+    length !== "0"
+  ) {
+    strength_svg.style.fill = " var(--3---Yellow, #F8CD65)";
+    strength_svg2.style.fill = "var(--3---Yellow, #F8CD65)";
+    strength_svg3.style.fill = "var(--3---Yellow, #F8CD65)";
+    Medium.style.display = "block";
+    Weak.style.display = "none";
+    Too_Weak.style.display = "none";
+    Strong.style.display = "none";
+  } else if (
+    ((first_input.checked && second_input.checked) ||
+      (first_input.checked && third_input.checked) ||
+      (first_input.checked && fourth_input.checked) ||
+      (second_input.checked && third_input.checked) ||
+      (second_input.checked && fourth_input.checked) ||
+      (third_input.checked && fourth_input.checked)) &&
+    length !== "0"
+  ) {
+    strength_svg.style.fill = "var(--2---Orange, #FB7C58)";
+    strength_svg2.style.fill = "var(--2---Orange, #FB7C58)";
+    Weak.style.display = "block";
+    Too_Weak.style.display = "none";
+    Medium.style.display = "none";
+    Strong.style.display = "none";
+  } else if (
+    (first_input.checked ||
+      second_input.checked ||
+      third_input.checked ||
+      fourth_input.checked) &&
+    length !== "0"
+  ) {
+    strength_svg.style.fill = "var(--1---Red, #F64A4A)";
+    Too_Weak.style.display = "block";
+    Weak.style.display = "none";
+    Medium.style.display = "none";
+    Strong.style.display = "none";
+  } else if (length === "0") {
+    strength_svg.style.fill = "none";
+    strength_svg.style.fill = " none";
+    strength_svg2.style.fill = " none";
+    strength_svg3.style.fill = " none";
+    strength_svg4.style.fill = " none";
+    Too_Weak.style.display = "none";
+    Weak.style.display = "none";
+    Medium.style.display = "none";
+    Strong.style.display = "none";
+    // checkedCount = 0;
+  }
+  // });
+  // console.log(checkedCount);
   let charset =
     "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+{}|:<>?`-=[]\\;',./'";
   let finalPassword = "";
   for (let i = 0; i < length; i++) {
     finalPassword += charset.charAt(Math.floor(Math.random() * charset.length));
+    console.log(length);
   }
   return (passwordInput.value = finalPassword);
 });
-// });
