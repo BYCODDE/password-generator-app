@@ -130,15 +130,27 @@ main_button.addEventListener("click", function () {
   let toupperNumber = charsetTouppercase.concat(charsetNumbers);
   let toupperSymbol = charsetTouppercase.concat(charsetSymbols);
 
-  // if (first_input.checked && second_input.checked && third_input.checked && length !== "0"){
-  //   for (let i = 0; i < length; i++) {
-  //     const toupperTolowertoNumer = charsetTouppercase.concat(charsetTolowercase);
-  //     finalPassword += toupperTolowertoNumer.charAt(
-  //       Math.floor(Math.random() * toupperTolowertoNumer.length)
-  //     );
-  //   }
-  //   return (passwordInput.value = finalPassword);
-  // }
+
+  if (first_input.checked && second_input.checked && fourth_input.checked && length !== "0"){
+    for (let i = 0; i < length; i++) {
+      const toupperTolowertoSymbol = toupperTolower.concat(toupperSymbol);
+      finalPassword += toupperTolowertoSymbol.charAt(
+        Math.floor(Math.random() * toupperTolowertoSymbol.length)
+      );
+    }
+    return (passwordInput.value = finalPassword);
+  }
+
+  if (first_input.checked && second_input.checked && third_input.checked && length !== "0"){
+    for (let i = 0; i < length; i++) {
+      const toupperTolowertoNumber = toupperTolower.concat(charsetNumbers);
+      finalPassword += toupperTolowertoNumber.charAt(
+        Math.floor(Math.random() * toupperTolowertoNumber.length)
+      );
+    }
+    return (passwordInput.value = finalPassword);
+  }
+
     if (first_input.checked && second_input.checked && length !== "0") {
       for (let i = 0; i < length; i++) {
         finalPassword += toupperTolower.charAt(
