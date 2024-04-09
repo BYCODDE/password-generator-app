@@ -129,9 +129,62 @@ main_button.addEventListener("click", function () {
   let toupperTolower = charsetTouppercase.concat(charsetTolowercase);
   let toupperNumber = charsetTouppercase.concat(charsetNumbers);
   let toupperSymbol = charsetTouppercase.concat(charsetSymbols);
+  let tolowerNumber = charsetTolowercase.concat(charsetNumbers);
+  let tonumberSymbol = charsetNumbers.concat(charsetSymbols);
 
+  if (
+    first_input.checked &&
+    second_input.checked &&
+    third_input.checked &&
+    fourth_input.checked &&
+    length !== "0"
+  ) {
+    for (let i = 0; i < length; i++) {
+      const toupperlowerTonumbertosymbol =
+        toupperTolower.concat(tonumberSymbol);
+      finalPassword += toupperlowerTonumbertosymbol.charAt(
+        Math.floor(Math.random() * toupperlowerTonumbertosymbol.length)
+      );
+    }
+    return (passwordInput.value = finalPassword);
+  }
 
-  if (first_input.checked && second_input.checked && fourth_input.checked && length !== "0"){
+  if (
+    second_input.checked &&
+    third_input.checked &&
+    fourth_input.checked &&
+    length !== "0"
+  ) {
+    for (let i = 0; i < length; i++) {
+      const tolowerTonumbertoSymbol = tolowerNumber.concat(charsetSymbols);
+      finalPassword += tolowerTonumbertoSymbol.charAt(
+        Math.floor(Math.random() * tolowerTonumbertoSymbol.length)
+      );
+    }
+    return (passwordInput.value = finalPassword);
+  }
+
+  if (
+    first_input.checked &&
+    third_input.checked &&
+    fourth_input.checked &&
+    length !== "0"
+  ) {
+    for (let i = 0; i < length; i++) {
+      const toupperTonumbertoSymbol = toupperNumber.concat(charsetSymbols);
+      finalPassword += toupperTonumbertoSymbol.charAt(
+        Math.floor(Math.random() * toupperTonumbertoSymbol.length)
+      );
+    }
+    return (passwordInput.value = finalPassword);
+  }
+
+  if (
+    first_input.checked &&
+    second_input.checked &&
+    fourth_input.checked &&
+    length !== "0"
+  ) {
     for (let i = 0; i < length; i++) {
       const toupperTolowertoSymbol = toupperTolower.concat(toupperSymbol);
       finalPassword += toupperTolowertoSymbol.charAt(
@@ -141,7 +194,12 @@ main_button.addEventListener("click", function () {
     return (passwordInput.value = finalPassword);
   }
 
-  if (first_input.checked && second_input.checked && third_input.checked && length !== "0"){
+  if (
+    first_input.checked &&
+    second_input.checked &&
+    third_input.checked &&
+    length !== "0"
+  ) {
     for (let i = 0; i < length; i++) {
       const toupperTolowertoNumber = toupperTolower.concat(charsetNumbers);
       finalPassword += toupperTolowertoNumber.charAt(
@@ -151,14 +209,14 @@ main_button.addEventListener("click", function () {
     return (passwordInput.value = finalPassword);
   }
 
-    if (first_input.checked && second_input.checked && length !== "0") {
-      for (let i = 0; i < length; i++) {
-        finalPassword += toupperTolower.charAt(
-          Math.floor(Math.random() * toupperTolower.length)
-        );
-      }
-      return (passwordInput.value = finalPassword);
+  if (first_input.checked && second_input.checked && length !== "0") {
+    for (let i = 0; i < length; i++) {
+      finalPassword += toupperTolower.charAt(
+        Math.floor(Math.random() * toupperTolower.length)
+      );
     }
+    return (passwordInput.value = finalPassword);
+  }
 
   if (first_input.checked && third_input.checked && length !== "0") {
     for (let i = 0; i < length; i++) {
@@ -213,10 +271,4 @@ main_button.addEventListener("click", function () {
     }
     return (passwordInput.value = finalPassword);
   }
-
-  for (let i = 0; i < length; i++) {
-    finalPassword += charset.charAt(Math.floor(Math.random() * charset.length));
-  }
-
-  return (passwordInput.value = finalPassword);
 });
